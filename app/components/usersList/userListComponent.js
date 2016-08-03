@@ -3,9 +3,6 @@
  */
 angular.module('myApp.usersList')
     .component('usersList', {
-        bindings: {
-            users: '@'
-        },
         controller: 'UsersListCtrl',
         templateUrl: 'components/usersList/usersList.html'
     });

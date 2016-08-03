@@ -9,7 +9,7 @@ angular.module('myApp.usersList')
     //    });
     //}])
 
-    .controller('UsersListCtrl', [function() {
+    .controller('UsersListCtrl', ['$timeout', function($timeout) {
         console.log('asd')
         this.test = 'asd'
         this.users = [
@@ -20,9 +20,9 @@ angular.module('myApp.usersList')
             {name: 'user5'}
         ]
 
-        setTimeout(() => {
+        $timeout(() => {
             console.log('asdss');
-            this.users.pop()
+            this.users.pop();
             console.log(this.users)
         },2000)
     }]);
