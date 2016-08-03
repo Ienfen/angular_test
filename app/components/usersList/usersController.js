@@ -9,6 +9,12 @@ angular.module('myApp.usersList')
     //    });
     //}])
 
-    .controller('UsersListCtrl', ['userService', function(userService) {
-
+    .controller('UsersListCtrl', [, function() {
+        this.data = [
+            {name: 'user1'},
+            {name: 'user2'},
+            {name: 'user3'},
+            {name: 'user4'},
+            {name: 'user5'}
+        ]
     }]);
