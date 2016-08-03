@@ -4,6 +4,7 @@
 angular.module('myApp', [
   //'ngRoute',
   'ui.router',
+    'myApp.usersList'
   //'myApp.view1',
   //'myApp.view2',
   //'myApp.version'

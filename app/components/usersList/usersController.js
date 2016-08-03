@@ -9,12 +9,20 @@ angular.module('myApp.usersList')
     //    });
     //}])
 
-    .controller('UsersListCtrl', [, function() {
-        this.data = [
+    .controller('UsersListCtrl', [function() {
+        console.log('asd')
+        this.test = 'asd'
+        this.users = [
             {name: 'user1'},
             {name: 'user2'},
             {name: 'user3'},
             {name: 'user4'},
             {name: 'user5'}
         ]
+
+        setTimeout(() => {
+            console.log('asdss');
+            this.users.pop()
+            console.log(this.users)
+        },2000)
     }]);

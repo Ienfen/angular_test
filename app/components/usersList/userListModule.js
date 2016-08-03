@@ -1,1 +1,1 @@
-angular.module('myApp.usersList', ['ngRoute']);
+angular.module('myApp.usersList', []);

@@ -4,8 +4,9 @@
 angular.module('myApp.usersList')
     .component('usersList', {
         bindings: {
-            users: ''
+            users: '@'
         },
         controller: 'UsersListCtrl',
-        templateUrl: 'userList.html'
+        templateUrl: 'components/usersList/usersList.html'
     });
+
