@@ -1,28 +1,13 @@
-'use strict';
-
 angular.module('myApp.usersList')
+    .controller('UsersListCtrl', ['usersService', '$state', function(usersService, $state) {
 
-    //.config(['$routeProvider', function($routeProvider) {
-    //    $routeProvider.when('/user-list', {
-    //        templateUrl: 'components/userList/usersList.html',
-    //        controller: 'UsersListCtrl'
-    //    });
-    //}])
+        this.edit = function(id) {
+            $state.go('editUser', {id:id});
+        };
 
-    .controller('UsersListCtrl', ['$timeout', function($timeout) {
-        console.log('asd')
-        this.test = 'asd'
-        this.users = [
-            {name: 'user1'},
-            {name: 'user2'},
-            {name: 'user3'},
-            {name: 'user4'},
-            {name: 'user5'}
-        ]
+        this.delete = function (id) {
+            usersService.deleteUserById(id);
+        };
 
-        $timeout(() => {
-            console.log('asdss');
-            this.users.pop();
-            console.log(this.users)
-        },2000)
+        this.users = usersService.getUsers();
     }]);

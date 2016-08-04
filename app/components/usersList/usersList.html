@@ -1,4 +1,24 @@
-<ul>
-    <li class="user link" ng-repeat="user in $ctrl.users">{{user.name}}</li>
-</ul>
+<div class="clearfix">
+    <div class="row" ng-repeat="user in $ctrl.users">
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-4">{{user.name}}</div>
+                <div class="col-md-4">{{user.surname}}</div>
+                <div class="col-md-4">{{user.phone}}</div>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="row">
+                <div class="col-md-6">
+                    <a ng-click="$ctrl.edit(user.id)" class="glyphicon glyphicon-pencil"></a>
+                </div>
+                <div class="col-md-6">
+                    <a ng-click="$ctrl.delete(user.id)" class="glyphicon glyphicon-trash"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 

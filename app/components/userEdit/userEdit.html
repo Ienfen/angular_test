@@ -1,0 +1,18 @@
+<div class="clearfix">
+    <div class="row">
+        <div class="col-md-4">Name</div>
+        <div class="col-md-4">Surname</div>
+        <div class="col-md-4">Phone</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"><input type="text" ng-model="$ctrl.user.name"></div>
+        <div class="col-md-4"><input type="text" ng-model="$ctrl.user.surname"></div>
+        <div class="col-md-4"><input type="text" ng-model="$ctrl.user.phone"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <button ng-click="$ctrl.save()">Save</button>
+            <button ng-click="$ctrl.cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
