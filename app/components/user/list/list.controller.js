@@ -2,14 +2,15 @@
  * Created by ihor on 8/8/16.
  */
 angular.module('myApp.user.list')
-    .controller('user.list.ctrl', ['user.list', '$state', function(userList, $state) {
+    .controller('user.list.ctrl', ['userList', 'user.service', '$state', function(userList, userService, $state) {
 
         this.edit = function(id) {
-            $state.go('editUser', {id:id});
+            $state.go('user.edit', {userId:id});
         };
 
         this.delete = function (id) {
-            //usersService.deleteUserById(id);
+            userService.deleteUserById(id);
+            $state.reload();
         };
 
         this.users = userList;

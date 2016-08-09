@@ -14,11 +14,11 @@ angular.module('myApp.user.list').
                     userListData: ['user.service', function (userService) {
                         return userService.getList();
                     }],
-                    userList: ['userListData', function (userListData, userService) {
+                    userList: ['userListData', 'user.service', function (userListData, userService) {
                         var userList = [];
 
                         userListData.forEach(function (user) {
-                            userList.push(new usersService.UserModel(user));
+                            userList.push(new userService.UserModel(user));
                         });
 
                         return userList;

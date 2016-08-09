@@ -1,8 +1,8 @@
 /**
  * Created by ihor on 8/8/16.
  */
-angular.module('user.core')
-    .service('user.model', function () {
+angular.module('myApp.user.core')
+    .service('user.service', function () {
         var users = [
             {
                 id:1,
@@ -46,6 +46,33 @@ angular.module('user.core')
 
         this.getList = function () {
             return users;
-        }
+        };
 
+        this.getUserById = function (id) {
+            for (var i = 0, length = users.length; i < length; i++) {
+                if (users[i].id == id) {
+                    return users[i];
+                }
+            }
+        };
+
+        this.updateUser = function (user) {
+            var id = user.id;
+
+            for (var i = 0, length = users.length; i < length; i++) {
+                if (users[i].id == id) {
+                    users[i] = user;
+                    return ;
+                }
+            }
+        };
+
+        this.deleteUserById = function (id) {
+            for (var i = 0, length = users.length; i < length; i++) {
+                if (users[i].id == id) {
+                    users.splice(i, 1);
+                    return ;
+                }
+            }
+        }
     });
